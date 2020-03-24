@@ -7,9 +7,8 @@ using namespace std;
 //Checks if the input is an int
 bool is_int(string num) {
     for (int x = 0; x < num.length(); x++) {
-        if (num[x] < '0' || num[x] > '9') {
+        if (num[x] < '0' || num[x] > '9')
             return false;
-        }
     }
 
     return true;
@@ -19,18 +18,16 @@ bool is_int(string num) {
 int get_int(string num) {
     int new_num = 0;
 
-    for (int x = 0; x < num.length(); x++) {
+    for (int x = 0; x < num.length(); x++)
         new_num += (num[x] - 48) * pow(10, num.length() - x - 1);
-    }
 
     return new_num;
 }
 
 //Checks if the denominator equals zero
 int denom_0(string num) {
-    if (get_int(num) == 0) {
+    if (get_int(num) == 0
         return true;
-    }
 
     return false;
 }
@@ -43,9 +40,8 @@ bool to_lowest_terms(int& numerator, int& denominator) {
         return true;
     } else {
         for(int x = 1; x <= numerator && x <= denominator; x++) {
-            if(numerator % x == 0 && denominator % x ==0) {
+            if(numerator % x == 0 && denominator % x ==0)
                 gcd = x;
-            }
         }
 
         numerator /= gcd;
@@ -100,11 +96,10 @@ int main() {
 
         cout << "The lowest terms of your fraction: ";
         
-        if (to_lowest_terms(new_numer, new_denom)) {
+        if (to_lowest_terms(new_numer, new_denom))
             cout << new_numer / new_denom <<endl;
-        } else {
+        else
             cout << new_numer << "/" << new_denom <<endl;
-        }
 
         cout << "Do you want to do another conversion? (0-no, 1-yes): ";
         cin >> finish;

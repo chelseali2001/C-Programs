@@ -1,7 +1,7 @@
 #include <iostream>
+#include <cmath>
 #include <cstdlib>
 #include <ctime>
-#include <cmath>
 
 using namespace std;
 
@@ -37,9 +37,8 @@ int main() {
     annual_salary = monthly_salary * months;
     profit = cars * (avg_price - cost);
     
-    if (misconducts != 0) {
+    if (misconducts != 0)
         deduction = 100 * pow(2, misconducts - 1);
-    }
 
     gross_income = annual_salary + round(0.02 * profit) - deduction;
 
@@ -55,23 +54,21 @@ int main() {
                     tax = round(0.06 * gross_income);
                     break;
                 case 'B':
-                    if (gross_income > 2000 && gross_income <= 10000) {
+                    if (gross_income > 2000 && gross_income <= 10000)
                         tax = 100;
-                    } else if (gross_income > 10000) {
+                    else if (gross_income > 10000)
                         tax = round((gross_income - 10000) * 0.1) + 100;
-                    }
 
                     break;
                 case 'C':
-                    if (gross_income <= 3500) {
+                    if (gross_income <= 3500)
                         tax = round(gross_income * 0.05);
-                    } else if (gross_income > 3500 && gross_income <= 9000) {
+                    else if (gross_income > 3500 && gross_income <= 9000)
                         tax = round((gross_income - 3500) * 0.07) + 175;
-                    } else if (gross_income > 9000 && gross_income <= 125000) {
+                    else if (gross_income > 9000 && gross_income <= 125000)
                         tax = round((gross_income - 9000) * 0.09) + 560;
-                    } else if (gross_income > 125000) {
+                    else if (gross_income > 125000)
                         tax = round((gross_income - 125000) * 0.099) + 11000;
-                    }
                     
                     break;
             }
@@ -83,23 +80,21 @@ int main() {
                     tax = round(gross_income * 0.08);
                     break;
                 case 'B':
-                    if (gross_income > 2500 && gross_income <= 10000) {
+                    if (gross_income > 2500 && gross_income <= 10000)
                         tax = 115;
-                    } else if (gross_income > 10000) {
+                    else if (gross_income > 10000)
                         tax = round((gross_income - 10000) * 0.105) + 115;
-                    }
 
                     break;
                 case 'C':
-                    if (gross_income <= 3450) {
+                    if (gross_income <= 3450)
                         tax = round(gross_income * 0.05);
-                    } else if (gross_income > 3450 && gross_income <= 8700) {
+                    else if (gross_income > 3450 && gross_income <= 8700)
                         tax = round((gross_income - 3450) * 0.07) + 172.5;
-                    } else if (gross_income > 8700 && gross_income <= 125000) {
+                    else if (gross_income > 8700 && gross_income <= 125000)
                         tax = round((gross_income - 8700) * 0.09) + 540;
-                    } else if (gross_income > 125000) {
+                    else if (gross_income > 125000)
                         tax = round((gross_income - 125000) * 0.099) + 11007; 
-                    }
                     
                     break;
             }

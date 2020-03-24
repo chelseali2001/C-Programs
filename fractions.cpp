@@ -26,7 +26,7 @@ int get_int(string num) {
 
 //Checks if the denominator equals zero
 int denom_0(string num) {
-    if (get_int(num) == 0
+    if (get_int(num) == 0)
         return true;
 
     return false;

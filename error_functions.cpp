@@ -6,56 +6,50 @@ using namespace std;
 
 //Indicates if the provided number is in the specified range
 bool check_range(int lower_bound, int upper_bound, int test_value) {
-    if (test_value >= lower_bound && test_value <= upper_bound) {
+    if (test_value >= lower_bound && test_value <= upper_bound)
         return true;
-    }
 
     return false;
 }
 
 //Indicates if a given character is a capital letter
 bool is_capital(char letter) {
-    if (letter >= 'A' && letter <= 'Z') {
+    if (letter >= 'A' && letter <= 'Z')
         return true;
-    }
 
     return false;
 }
 
 //Indicates if a given number is even
 bool is_even(int num) {
-    if (num % 2 == 0) {
+    if (num % 2 == 0)
         return true;
-    }
 
     return false;
 }
 
 //Indicates if a given number is odd
 bool is_odd(int num) {
-    if (num % 2 != 0) {
+    if (num % 2 != 0)
         return true;
-    }
 
     return false;
 }
 
 //Test num1 agains num2 and returns -1 if num1 < num2, returns 0 if num1 == num2, returns 1 if num1 > num2
 int equality_test(int num1, int num2) {
-    if (num1 < num2) {
+    if (num1 < num2)
         return -1;
-    } else if (num1 == num2) {
+    else if (num1 == num2)
         return 0;
-    } else if (num1 > num2) {
+    else if (num1 > num2)
         return 1;
-    }
 }
 
 //Tests if num1 and num2 are equal to each other within a certain precision
 bool float_is_equal(float num1, float num2, float precision) {
-    if (precision > abs(num1 - num2)) {
+    if (precision > abs(num1 - num2))
         return true;
-    }
 
     return false;
 }
@@ -63,9 +57,8 @@ bool float_is_equal(float num1, float num2, float precision) {
 //Indicates if a given string is an integer
 bool is_int(string num) {
     for (int x = 0; x < num.length(); x++) {
-        if (num[x] < '0' || num[x] > '9') {
+        if (num[x] < '0' || num[x] > '9')
             return false;
-        }
     }
 
     return true;
@@ -74,9 +67,8 @@ bool is_int(string num) {
 //Indicates if the provided string contains numbers
 bool numbers_present(string sentence) {
     for (int x = 0; x < sentence.length(); x++) {
-        if (sentence[x] >= '0' && sentence[x] <= '9') {
+        if (sentence[x] >= '0' && sentence[x] <= '9')
             return true;
-        }
     }
 
     return false;
@@ -85,9 +77,8 @@ bool numbers_present(string sentence) {
 //Indicates if the provided string contains letters
 bool letters_present(string sentence) {
     for (int x = 0; x < sentence.length(); x++) {
-        if ((sentence[x] >= 'A' && sentence[x] <= 'Z') || (sentence[x] >= 'a' && sentence[x] <= 'z')) {
+        if ((sentence[x] >= 'A' && sentence[x] <= 'Z') || (sentence[x] >= 'a' && sentence[x] <= 'z'))
             return true;
-        }
     }
 
     return false;
@@ -99,16 +90,14 @@ bool contains_sub_string(string sentence, string sub_string) {
         string word = "";
 
         if (x < sentence.length() - sub_string.length()) {
-            for (int i = x; i < x + sub_string.length(); i++) {
+            for (int i = x; i < x + sub_string.length(); i++)
                 word += sentence[i];
-            }
         } else {
             break;
         }
 
-        if (word == sub_string) {
+        if (word == sub_string)
             return true;
-        }
     }
 
     return false;
@@ -119,9 +108,8 @@ int word_count(string sentence) {
     int words = 1;
 
     for (int x = 0; x < sentence.length(); x++) {
-        if (sentence[x] == ' ') {
+        if (sentence[x] == ' ')
             words++;
-        }
     }
 
     return words;
@@ -130,9 +118,8 @@ int word_count(string sentence) {
 //Capitalizes all letters in a given string
 string to_upper(string sentence) {
     for (int x = 0; x < sentence.length(); x++) {
-        if (sentence[x] >= 'a' && sentence[x] <= 'z') {
+        if (sentence[x] >= 'a' && sentence[x] <= 'z')
             sentence[x] = (char) (sentence[x] - 32);
-        }
     }
 
     return sentence;
@@ -141,9 +128,8 @@ string to_upper(string sentence) {
 //Makes all letters lowercase in a given string and leave all non-letter characters unchanged
 string to_lower(string sentence) {
     for (int x = 0; x < sentence.length(); x++) {
-        if (sentence[x] >= 'A' && sentence[x] <= 'Z') {
+        if (sentence[x] >= 'A' && sentence[x] <= 'Z')
             sentence[x] = (char) (sentence[x] + 32);
-        }
     }
 
     return sentence;
@@ -154,14 +140,12 @@ int get_int(string prompt) {
     int val = 0;
 
     for (int x = 0; x < prompt.length(); x++) {
-        if (prompt[x] < '0' || prompt[x] > '9') {
+        if (prompt[x] < '0' || prompt[x] > '9')
             return 0;
-        }
     }
 
-    for (int x = 0; x < prompt.length(); x++) {
+    for (int x = 0; x < prompt.length(); x++)
         val += (prompt[x] - 48) * pow(10, prompt.length() - x - 1);
-    }
 
     return val;
 }
